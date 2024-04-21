@@ -1,15 +1,18 @@
 import React from 'react';
-import Header from './Header';
+import Header from './HeaderFolder/Header';
 import './App.css';
 import 'typeface-roboto';
+import Body from './body/Body';
 
 
 const App = () => {
   return (
     <div>
       <Header />
-      {/* Other components */}
-    </div>
+        <Body />
+        <Body />
+        <Body />
+      </div>
   );
 };
 
