@@ -3,10 +3,10 @@ import React from "react";
 import tpcodllogo from "../assets/tpcodllogo.png";
 import "./Header.scss";
 import SearchBox from "./Search";
-import Email from "./Email";
+// import Email from "./Email";
 import FontResizer from "./FontResizer";
 import LanguageChanger from "./LanguageChanger";
-import MenuList from "./MenuList";
+import { MenuList, menuItems } from "./MenuList";
 
 const Header = () => {
   return (
@@ -23,9 +23,8 @@ const Header = () => {
               <a href="tel:18003457122">1800 345 7122</a>
             </span>
           </li>
-          <SearchBox />
+          <SearchBox menuItems={menuItems} />
           <Email />
-
           <LanguageChanger />
           <FontResizer />
         </ul>

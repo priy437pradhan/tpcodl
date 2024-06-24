@@ -1,20 +1,28 @@
-import React from 'react'
-import BACKGROUND from '../assets/BACKGROUND.png/'
-import './body.scss'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
+import './body.scss';
+import VisionMission from './VisionMission';
+import Ethics from './Ethics';
+import VerticalSlider from './InitialSlide';
 
 function Body() {
-  const handleScroll = () => {
-    window.scrollBy({
-      top: window.innerHeight, 
-      behavior: 'smooth',
-    });
-  };
-
   return (
-    <div className="body" onScroll={handleScroll}>
-      <img src={BACKGROUND} className="bodybackgroundImg" alt="Description of the image" />
+    <div className="bodyContainertp">
+     
+      <Router> 
+        <Routes>
+
+          <Route path="/" element={<VerticalSlider/>} />
+
+          <Route path="/vision-mission" element={<VisionMission />} />
+          <Route path="/ethics" element={<Ethics />} />
+        </Routes>
+      </Router> 
+     
     </div>
   );
 }
 
-export default Body
+export default Body;

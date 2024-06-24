@@ -1,69 +1,75 @@
-import React from 'react'
+import React, { useState } from "react";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./Header.scss";
+const menuItems = [
+  {
+    title: "Home",
+    path: "/",
+  },
+  {
+    title: "Corporate",
+    subItems: [ 
+      { title: "Vision- Mission-Values", path: "/vision-mission" },
+      { title: "Ethics", path: "/ethics" },
+      { title: "Compliance", path: "/compliance" },
+      { title: "Corporate Policies", path: "/corporate-policies" },
+      { title: "Investor Relations", path: "/investor-relations" },
+    ],
+  },
+  {
+    title: "Sustainability",
+    subItems: [
+      { title: "Dreasses", path: "#" },
+      { title: "Dresses", path: "#" },
+      { title: "Tops", path: "#" },
+      { title: "Skirts", path: "#" },
+    ],
+  },
+  {
+    title: "Tariff & Regulations",
+    subItems: [
+      { title: "RST Details", path: "#" },
+      { title: "Supply Code", path: "#" },
+      { title: "Distribution Code", path: "#" },
+      { title: "Electricity (Rights of Consumers) Rules, 2020", path: "#" },
+    ],
+  },
+];
 
 function MenuList() {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
   return (
     <div className="menu-containerTP">
-  <ul className="menu-listTP">
-    <li className="menuTP">Home
-      
-    </li>
-    <li class="menuTP">Corporate
-      <ul className="dropdownTP">
-        <li><a href="#">Vision - Mission - Values</a></li>
-        <li><a href="#">Ethics</a></li>
-        <li><a href="#">Compliance</a></li>
-        <li><a href="#">Corporate Policies</a></li>
-        <li><a href="#">Investor Relations</a></li>
+      <div className="menu-icon" onClick={toggleMenu}>
+        <FontAwesomeIcon icon={faBars} />
+      </div>
+      <ul className={`menu-listTP ${showMenu ? "show" : ""}`}>
+        {menuItems.map((item, index) => (
+          <li key={index} className="menuTP">
+            {item.subItems ? (
+              <>
+                {item.title}
+                <ul className="dropdownTP">
+                  {item.subItems.map((subItem, subIndex) => (
+                    <li key={subIndex}>
+                      <a href={subItem.path}>{subItem.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <a href={item.path}>{item.title}</a>
+            )}
+          </li>
+        ))}
       </ul>
-    </li>
-    <li class="menuTP">Sustainability
-      <ul className="dropdownTP">
-        <li><a href="#">Dresses</a></li>
-        <li><a href="#">Tops</a></li>
-        <li><a href="#">Skirts</a></li>
-      </ul>
-    </li>
-    <li class="menuTP">Tariff &amp; Regulations
-      <ul className="dropdownTP">
-        <li><a href="#">RST Details</a></li>
-        <li><a href="#">Supply Code</a></li>
-        <li><a href="#">Distribution Code</a></li>
-        <li><a href="#">Electricity (Rights of Consumers) Rules, 2020</a></li>
-      </ul>
-    </li>
-    
-    <li class="menuTP">Men
-      <ul className="dropdownTP">
-        <li><a href="#">Shirts</a></li>
-        <li><a href="#">T-Shirts</a></li>
-        <li><a href="#">Jeans</a></li>
-      </ul>
-    </li>
-    <li class="menuTP">Men
-      <ul className="dropdownTP">
-        <li><a href="#">Shirts</a></li>
-        <li><a href="#">T-Shirts</a></li>
-        <li><a href="#">Jeans</a></li>
-      </ul>
-    </li>
-    <li class="menuTP">Men
-      <ul className="dropdownTP">
-        <li><a href="#">Shirts</a></li>
-        <li><a href="#">T-Shirts</a></li>
-        <li><a href="#">Jeans</a></li>
-      </ul>
-    </li>
-    <li class="menuTP">Women
-      <ul className="dropdownTP">
-        <li><a href="#">Dresses</a></li>
-        <li><a href="#">Tops</a></li>
-        <li><a href="#">Skirts</a></li>
-      </ul>
-    </li>
-  </ul>
-</div>
-  )
+    </div>
+  );
 }
 
-export default MenuList;
+export { MenuList, menuItems };

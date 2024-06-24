@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import "./Header.scss";
-// import { translate } from 'google-translate-api'; 
 
 function LanguageChanger() {
   const [language, setLanguage] = useState('english');
