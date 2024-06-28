@@ -1,4 +1,3 @@
-import React from "react";
 import Apply from '../assets/Apply.png'
 import CustomerLog from '../assets/CustomerLog.png'
 const SlideRightMenu = () => {

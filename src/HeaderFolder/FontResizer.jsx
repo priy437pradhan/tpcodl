@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import "./Header.scss";
 
 function FontResizer() {

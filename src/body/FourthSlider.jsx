@@ -1,4 +1,3 @@
-import React from 'react'
 import KnowMore from './KnowMore'
 function FourthSlider() {
   return (

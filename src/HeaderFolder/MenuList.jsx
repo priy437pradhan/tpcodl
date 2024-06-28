@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./Header.scss";
@@ -46,7 +46,7 @@ function MenuList() {
   return (
     <div className="menu-containerTP">
       <div className="menu-icon" onClick={toggleMenu}>
-        <FontAwesomeIcon icon={faBars} />
+        {/* <FontAwesomeIcon icon={faBars} /> */}
       </div>
       <ul className={`menu-listTP ${showMenu ? "show" : ""}`}>
         {menuItems.map((item, index) => (

@@ -1,4 +1,3 @@
-import React from 'react';
 import smilingGirl from '../assets/customer_zone_info.png'
 import KnowMore from './KnowMore'
 function SecondSlider() {

@@ -1,4 +1,3 @@
-import React from "react";
 import Rohini from  '../assets/Roshni_(1)_75bc31cd2a.png'
 import EthicsImg from  '../assets/Ethics.png'
 import TheftModified from  '../assets/Theft-modified.jpeg'

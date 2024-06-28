@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import "./Header.scss";
@@ -71,7 +71,7 @@ const SearchBox = ({ menuItems }) => {
       <div id="searchPrompt" className={`search-prompt ${showPrompt ? '' : 'd-none'}`}>
         {promptContent}
       </div>
-      <FontAwesomeIcon onClick={handleSearch} icon={faSearch} />
+      {/* <FontAwesomeIcon onClick={handleSearch} icon={faSearch} /> */}
     </li>
   );
 };

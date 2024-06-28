@@ -1,5 +1,3 @@
-import React from 'react'
-import KnowMore from './KnowMore'
 import smilyBoy from '../assets/vendor_info.png'
 function FifthSlider() {
   return (
